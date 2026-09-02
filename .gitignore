@@ -1,0 +1,70 @@
+# ==========================================
+# Dependencies & Package Managers
+# ==========================================
+node_modules/
+jspm_packages/
+pnpm-lock.yaml
+yarn-error.log
+
+# ==========================================
+# Build Artifacts & Output
+# ==========================================
+dist/
+build/
+out/
+*.exe
+*.dll
+*.so
+
+# ==========================================
+# Environment Variables & Secrets (CRITICAL)
+# ==========================================
+.env
+.env.local
+.env.production
+*.pem
+*.key
+
+# ==========================================
+# Log & Temporary Files
+# ==========================================
+*.log
+logs/
+*.tmp
+*.swp
+
+# ==========================================
+# Python Specific
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+
+# ==========================================
+# Operating System Files
+# ==========================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ==========================================
+# IDEs & Editors
+# ==========================================
+# VS Code
+.vscode/
+!.vscode/extensions.json
+
+# IntelliJ / WebStorm / PyCharm
+.idea/
+*.iml
+
+ignore/
