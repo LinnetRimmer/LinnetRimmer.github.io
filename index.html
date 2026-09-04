@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Linnet Rimmer for Ward 12 — Greater Sudbury</title>
+<title>Linnet Rimmer for Ward 12 — Coming Soon</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
-  /* ===================== Design tokens ===================== */
   :root{
     --navy: #123e80;
     --navy-dark: #0a2957;
@@ -23,12 +22,10 @@
 
     --serif: "Fraunces", Georgia, serif;
     --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-
-    --wrap: 1160px;
   }
 
   *{ box-sizing: border-box; }
-  html{ scroll-behavior: smooth; }
+  html, body{ height: 100%; }
   body{
     margin:0;
     font-family: var(--sans);
@@ -36,84 +33,29 @@
     background: var(--white);
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
-  img,svg{ display:block; max-width:100%; }
-  a{ color: inherit; }
-  h1,h2,h3{
+  a{ color: inherit; text-decoration: none; }
+  h1{
     font-family: var(--serif);
     font-weight: 600;
     margin: 0;
     color: var(--navy-dark);
     letter-spacing: -0.01em;
   }
-  p{ margin: 0; }
-  .wrap{
-    max-width: var(--wrap);
-    margin: 0 auto;
-    padding: 0 32px;
-  }
-  section{ padding: 96px 0; }
-  .eyebrow{
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--cyan-deep);
-    margin-bottom: 14px;
-  }
-
-  /* ===================== Buttons ===================== */
-  .btn{
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 14px 26px;
-    border-radius: 999px;
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: 15px;
-    text-decoration: none;
-    border: 1.5px solid transparent;
-    cursor: pointer;
-    transition: transform .15s ease, background .15s ease, border-color .15s ease;
-  }
-  .btn:hover{ transform: translateY(-1px); }
-  .btn:focus-visible{ outline: 3px solid var(--navy); outline-offset: 3px; }
-  .btn-primary{
-    background: var(--cyan);
-    color: var(--navy-dark);
-  }
-  .btn-primary:hover{ background: var(--cyan-deep); }
-  .btn-outline{
-    background: transparent;
-    color: var(--navy-dark);
-    border-color: var(--navy-dark);
-  }
-  .btn-outline:hover{ background: var(--navy-dark); color: var(--white); }
-  .btn-on-navy{
-    background: var(--cyan);
-    color: var(--navy-dark);
-  }
-  .btn-on-navy:hover{ background: var(--white); }
 
   /* ===================== Header ===================== */
   header{
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-row{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 0;
+    padding: 24px 32px;
   }
   .brand{
     display: flex;
     align-items: center;
     gap: 12px;
     text-decoration: none;
+    width: fit-content;
   }
   .brand-mark{
     width: 38px; height: 38px;
@@ -130,255 +72,120 @@
     line-height: 1.25;
   }
   .brand-name span{ display:block; font-size: 13px; font-weight: 400; color: var(--ink-soft); font-family: var(--sans); }
-  nav.links{
-    display: flex;
-    gap: 36px;
-  }
-  nav.links a{
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--ink);
-  }
-  nav.links a:hover{ color: var(--navy); }
-  .nav-actions{ display:flex; align-items:center; gap:20px; }
-  .menu-toggle{ display:none; background:none; border:none; cursor:pointer; padding:6px; }
 
-  @media (max-width: 860px){
-    nav.links{ display:none; }
-    .menu-toggle{ display:block; }
-  }
-
-  /* ===================== Hero ===================== */
-  .hero{
-    padding: 88px 0 100px;
-  }
-  .hero .wrap{
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 64px;
-    align-items: center;
-  }
-  .hero h1{
-    font-size: clamp(44px, 6vw, 68px);
-    line-height: 1.04;
-    margin-bottom: 26px;
-  }
-  .hero-sub{
-    font-size: 19px;
-    color: var(--ink-soft);
-    max-width: 46ch;
-    margin-bottom: 36px;
-  }
-  .hero-ctas{ display:flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
-  .hero-stats{
-    display: flex;
-    gap: 40px;
-    border-top: 1px solid var(--line);
-    padding-top: 24px;
-  }
-  .hero-stats div strong{
-    display:block;
-    font-family: var(--serif);
-    font-size: 28px;
-    color: var(--navy-dark);
-  }
-  .hero-stats div span{ font-size: 13px; color: var(--ink-soft); }
-
-  .hero-art{ position: relative; }
-
-  @media (max-width: 900px){
-    .hero .wrap{ grid-template-columns: 1fr; }
-    .hero-art{ order: -1; }
-  }
-
-  /* ===================== Platform ===================== */
-  .platform{ background: var(--white); }
-  .section-head{
-    display:flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 24px;
-    margin-bottom: 52px;
-    flex-wrap: wrap;
-  }
-  .section-head h2{ font-size: clamp(30px, 4vw, 42px); max-width: 16ch; }
-  .section-head p{ color: var(--ink-soft); max-width: 40ch; font-size: 16px; }
-
-  .platform-grid{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-  }
-  .platform-card{
-    background: var(--white);
-    padding: 36px 28px;
-  }
-  .platform-card .icon{
-    width: 44px; height: 44px;
-    margin-bottom: 24px;
-  }
-  .platform-card h3{
-    font-size: 20px;
-    margin-bottom: 12px;
-  }
-  .platform-card p{
-    font-size: 15px;
-    color: var(--ink-soft);
-  }
-  @media (max-width: 900px){
-    .platform-grid{ grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 560px){
-    .platform-grid{ grid-template-columns: 1fr; }
-  }
-
-  /* ===================== About ===================== */
-  .about{ background: var(--cyan-tint); }
-  .about .wrap{
-    display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
-    gap: 64px;
-    align-items: center;
-  }
-  .about-portrait{
-    aspect-ratio: 4/5;
-    border-radius: 18px;
-    overflow: hidden;
-    background: var(--navy-dark);
-    position: relative;
-  }
-  .about h2{ font-size: clamp(28px, 3.6vw, 38px); margin-bottom: 22px; }
-  .about-body p{ margin-bottom: 18px; font-size: 16px; color: var(--ink-soft); max-width: 58ch; }
-  .about-signoff{
-    margin-top: 28px;
-    font-family: var(--serif);
-    font-size: 22px;
-    color: var(--navy-dark);
-  }
-  @media (max-width: 860px){
-    .about .wrap{ grid-template-columns: 1fr; }
-    .about-portrait{ max-width: 320px; }
-  }
-
-  /* ===================== Gallery ===================== */
-  .gallery{ background: var(--white); }
-  .gallery-grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .gallery-tile{
-    aspect-ratio: 1/1;
-    border-radius: 14px;
-    overflow: hidden;
-    background: var(--cyan-tint);
-    border: 1px solid var(--line);
-    position: relative;
-  }
-  .gallery-tile img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .gallery-placeholder{
-    width: 100%;
-    height: 100%;
+  /* ===================== Main ===================== */
+  main{
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 24px 24px 64px;
   }
-  .gallery-placeholder svg{ width: 56px; height: 56px; }
-  @media (max-width: 700px){
-    .gallery-grid{ grid-template-columns: 1fr; }
+  .content{
+    max-width: 720px;
+    text-align: center;
   }
-
-  /* ===================== Get involved band ===================== */
-  .involve{
-    background: var(--navy-dark);
-    color: var(--white);
+  .eyebrow{
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--cyan-deep);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
   }
-  .involve h2{ color: var(--white); font-size: clamp(30px,4vw,42px); max-width: 18ch; margin-bottom: 14px; }
-  .involve > .wrap > p{ color: #b9cbe6; max-width: 48ch; margin-bottom: 56px; font-size: 16px; }
-  .involve-grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+  h1.headline{
+    font-size: clamp(38px, 6vw, 62px);
+    line-height: 1.06;
+    margin-bottom: 20px;
   }
-  .involve-card{
-    border: 1px solid #2a4e83;
-    border-radius: 16px;
-    padding: 32px;
-  }
-  .involve-card h3{ color: var(--white); font-size: 20px; margin-bottom: 10px; }
-  .involve-card p{ color: #b9cbe6; font-size: 15px; margin-bottom: 24px; }
-  @media (max-width: 860px){
-    .involve-grid{ grid-template-columns: 1fr; }
-  }
-
-  /* ===================== Endorsement ===================== */
-  .endorse{ background: var(--white); }
-  .endorse .wrap{ max-width: 800px; text-align: left; }
-  .endorse blockquote{
-    font-family: var(--serif);
-    font-size: clamp(26px, 3.4vw, 34px);
-    line-height: 1.38;
-    color: var(--navy-dark);
-    margin: 0 0 28px;
-  }
-  .endorse cite{
-    font-style: normal;
-    font-size: 15px;
+  .sub{
+    font-size: 18px;
     color: var(--ink-soft);
+    max-width: 46ch;
+    margin: 0 auto 48px;
+  }
+
+  /* ===================== Countdown ===================== */
+  .countdown{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .countdown .unit{
+    background: var(--cyan-tint);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px 20px;
+    min-width: 96px;
+  }
+  .countdown .num{
+    font-family: var(--serif);
+    font-size: clamp(32px, 6vw, 46px);
+    font-weight: 600;
+    color: var(--navy-dark);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .countdown .label{
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .countdown .colon{
     display: flex;
     align-items: center;
-    gap: 12px;
+    font-family: var(--serif);
+    font-size: clamp(24px, 4vw, 36px);
+    color: var(--cyan-deep);
+    padding-bottom: 20px;
   }
-  .endorse cite .dot{ width:6px; height:6px; border-radius:50%; background: var(--cyan-deep); }
+  @media (max-width: 560px){
+    .countdown .colon{ display:none; }
+    .countdown{ gap: 12px; }
+    .countdown .unit{ min-width: 74px; padding: 16px 12px; }
+  }
+
+  .launch-date{
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-bottom: 40px;
+  }
+  .launch-date strong{ color: var(--navy-dark); }
+
+  .divider-line{
+    width: 60px;
+    height: 2px;
+    background: var(--cyan);
+    margin: 0 auto 40px;
+    border-radius: 2px;
+  }
+
+  .contact-line{
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+  .contact-line a{
+    color: var(--navy);
+    font-weight: 600;
+    border-bottom: 1px solid var(--cyan);
+  }
+  .contact-line a:hover{ color: var(--cyan-deep); }
 
   /* ===================== Footer ===================== */
   footer{
-    background: var(--navy-dark);
-    color: #b9cbe6;
-    padding: 64px 0 32px;
-    border-top: 1px solid #1c3f70;
-  }
-  .footer-top{
-    display: grid;
-    grid-template-columns: 1.3fr 1fr 1fr 1fr;
-    gap: 40px;
-    padding-bottom: 48px;
-  }
-  .footer-brand{ display:flex; align-items:center; gap:12px; margin-bottom: 16px; }
-  .footer-brand span{ font-family: var(--serif); color: var(--white); font-size: 17px; }
-  footer h4{
-    color: var(--white);
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 16px;
-  }
-  footer ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
-  footer a{ text-decoration:none; font-size: 14px; color: #b9cbe6; }
-  footer a:hover{ color: var(--cyan); }
-  .footer-bottom{
-    border-top: 1px solid #1c3f70;
-    padding-top: 28px;
-    display:flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
+    padding: 28px 32px;
+    text-align: center;
     font-size: 13px;
     color: #7d97c2;
-  }
-  @media (max-width: 760px){
-    .footer-top{ grid-template-columns: 1fr 1fr; }
+    background: var(--navy-dark);
   }
 
   @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior: auto; }
     *{ transition: none !important; animation: none !important; }
   }
 </style>
@@ -386,307 +193,84 @@
 <body>
 
 <header>
-  <div class="wrap nav-row">
-    <a class="brand" href="#top">
-      <span class="brand-mark">
-        <svg width="22" height="22" viewBox="0 0 24 24" role="img" aria-label="Sudbury skyline mark">
-          <rect x="1" y="20" width="22" height="1.4" fill="#03dffc"/>
-          <!-- Big Nickel on its stand -->
-          <rect x="6.7" y="17" width="1.6" height="3.2" fill="#03dffc"/>
-          <polygon points="7.5,8.2 9.7,8.79 11.31,10.4 11.9,12.6 11.31,14.8 9.7,16.41 7.5,17 5.3,16.41 3.69,14.8 3.1,12.6 3.69,10.4 5.3,8.79" fill="none" stroke="#03dffc" stroke-width="1.3" stroke-linejoin="round"/>
-          <polygon points="7.5,11.1 8.25,11.3 8.8,11.85 9,12.6 8.8,13.35 8.25,13.9 7.5,14.1 6.75,13.9 6.2,13.35 6,12.6 6.2,11.85 6.75,11.3" fill="#03dffc"/>
-          <!-- Superstack: with a light wisp of smoke -->
-          <path d="M17.1 1.6 L18.7 1.6 L19.9 20 L15.9 20 Z" fill="#03dffc"/>
-          <rect x="16.4" y="5.4" width="3" height="1.2" fill="#123e80"/>
-          <ellipse cx="19.1" cy="0.4" rx="1.5" ry="0.9" fill="#03dffc" opacity="0.55"/>
-        </svg>
-      </span>
-      <span class="brand-name">Linnet Rimmer<span>Ward 12 · Greater Sudbury</span></span>
-    </a>
-    <nav class="links">
-      <a href="#platform">Platform</a>
-      <a href="#about">About</a>
-      <a href="#media">Media</a>
-    </nav>
-    <div class="nav-actions">
-      <a class="btn btn-primary" href="#involved">Get involved</a>
-    </div>
-  </div>
+  <a class="brand" href="#">
+    <span class="brand-mark">
+      <svg width="22" height="22" viewBox="0 0 24 24" role="img" aria-label="Sudbury skyline mark">
+        <rect x="1" y="20" width="22" height="1.4" fill="#03dffc"/>
+        <rect x="6.7" y="17" width="1.6" height="3.2" fill="#03dffc"/>
+        <polygon points="7.5,8.2 9.7,8.79 11.31,10.4 11.9,12.6 11.31,14.8 9.7,16.41 7.5,17 5.3,16.41 3.69,14.8 3.1,12.6 3.69,10.4 5.3,8.79" fill="none" stroke="#03dffc" stroke-width="1.3" stroke-linejoin="round"/>
+        <polygon points="7.5,11.1 8.25,11.3 8.8,11.85 9,12.6 8.8,13.35 8.25,13.9 7.5,14.1 6.75,13.9 6.2,13.35 6,12.6 6.2,11.85 6.75,11.3" fill="#03dffc"/>
+        <path d="M17.1 1.6 L18.7 1.6 L19.9 20 L15.9 20 Z" fill="#03dffc"/>
+        <rect x="16.4" y="5.4" width="3" height="1.2" fill="#123e80"/>
+        <ellipse cx="19.1" cy="0.4" rx="1.5" ry="0.9" fill="#03dffc" opacity="0.55"/>
+      </svg>
+    </span>
+    <span class="brand-name">Linnet Rimmer<span>Ward 12 · Greater Sudbury</span></span>
+  </a>
 </header>
 
-<main id="top">
+<main>
+  <div class="content">
+    <div class="eyebrow">Something's on the way</div>
+    <h1 class="headline">The campaign site<br>launches soon.</h1>
+    <p class="sub">We're putting the finishing touches on the site for Linnet Rimmer's Ward&nbsp;12 campaign. Check back shortly.</p>
 
-  <!-- ===================== HERO ===================== -->
-  <section class="hero">
-    <div class="wrap">
-      <div>
-        <h1>Services for citizens, without overspending.</h1>
-        <p class="hero-sub">A city should not be run like a for-profit organization, but it should be responsible with the taxes it collects. The goal should be to improve services to it's citizens while keeping taxes flat or below inflation.</p>
-        <p class="hero-sub">I believe in finding ways to improve services without overspending by finding efficiencies and re-allocation opportunities.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="#involved">Volunteer with the campaign</a>
-          <a class="btn btn-outline" href="#platform">See the plan</a>
-        </div>
-        <div class="hero-stats">
-          <div><strong>5 yrs</strong><span>Ward 12 resident</span></div>
-          <div><strong>0</strong><span>Doors knocked since Sept 1</span></div>
-          <div><strong>Oct 26</strong><span>Election day</span></div>
-        </div>
-      </div>
-
-      <div class="hero-art">
-        <svg viewBox="0 0 560 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of the district skyline">
-          <rect x="0" y="0" width="560" height="620" rx="24" fill="#123e80"/>
-          <!-- soft glow -->
-          <circle cx="430" cy="120" r="150" fill="#03dffc" opacity="0.14"/>
-          <!-- skyline -->
-          <g fill="#0a2957">
-            <rect x="40" y="360" width="70" height="220"/>
-            <rect x="120" y="300" width="60" height="280"/>
-            <rect x="190" y="400" width="50" height="180"/>
-            <rect x="250" y="250" width="80" height="330"/>
-            <rect x="340" y="330" width="60" height="250"/>
-            <rect x="410" y="380" width="55" height="200"/>
-            <rect x="475" y="290" width="65" height="290"/>
-          </g>
-          <!-- windows -->
-          <g fill="#03dffc">
-            <rect x="55" y="390" width="10" height="14"/>
-            <rect x="80" y="390" width="10" height="14"/>
-            <rect x="55" y="430" width="10" height="14"/>
-            <rect x="80" y="430" width="10" height="14"/>
-            <rect x="135" y="330" width="10" height="14"/>
-            <rect x="160" y="330" width="10" height="14"/>
-            <rect x="135" y="370" width="10" height="14"/>
-            <rect x="160" y="370" width="10" height="14"/>
-            <rect x="135" y="410" width="10" height="14"/>
-            <rect x="160" y="410" width="10" height="14"/>
-            <rect x="270" y="280" width="10" height="14"/>
-            <rect x="298" y="280" width="10" height="14"/>
-            <rect x="270" y="320" width="10" height="14"/>
-            <rect x="298" y="320" width="10" height="14"/>
-            <rect x="270" y="360" width="10" height="14"/>
-            <rect x="298" y="360" width="10" height="14"/>
-            <rect x="270" y="400" width="10" height="14"/>
-            <rect x="298" y="400" width="10" height="14"/>
-            <rect x="358" y="360" width="10" height="14"/>
-            <rect x="382" y="360" width="10" height="14"/>
-            <rect x="358" y="400" width="10" height="14"/>
-            <rect x="382" y="400" width="10" height="14"/>
-            <rect x="425" y="410" width="10" height="14"/>
-            <rect x="447" y="410" width="10" height="14"/>
-            <rect x="490" y="320" width="10" height="14"/>
-            <rect x="514" y="320" width="10" height="14"/>
-            <rect x="490" y="360" width="10" height="14"/>
-            <rect x="514" y="360" width="10" height="14"/>
-          </g>
-          <!-- ground line -->
-          <rect x="0" y="580" width="560" height="40" fill="#0a2957"/>
-          <!-- badge -->
-          <g transform="translate(60,60)">
-            <circle cx="0" cy="0" r="46" fill="#ffffff"/>
-            <path d="M0 -24 L5.6 -8.6 L22 -7.4 L9.2 3.1 L13.2 19 L0 9.6 L-13.2 19 L-9.2 3.1 L-22 -7.4 L-5.6 -8.6 Z" fill="#123e80"/>
-          </g>
-        </svg>
-      </div>
+    <div class="countdown" id="countdown">
+      <div class="unit"><div class="num" id="cd-days">00</div><div class="label">Days</div></div>
+      <div class="colon">:</div>
+      <div class="unit"><div class="num" id="cd-hours">00</div><div class="label">Hours</div></div>
+      <div class="colon">:</div>
+      <div class="unit"><div class="num" id="cd-mins">00</div><div class="label">Minutes</div></div>
+      <div class="colon">:</div>
+      <div class="unit"><div class="num" id="cd-secs">00</div><div class="label">Seconds</div></div>
     </div>
-  </section>
 
-  <!-- ===================== PLATFORM ===================== -->
-  <section class="platform" id="platform">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Where I stand</h2>
-        <p>Priorities built around delivering services to citizens, efficiently.</p>
-      </div>
+    <p class="launch-date">Live <strong>Saturday, September 5, 2026</strong> at <strong>1:00 PM ET</strong></p>
 
-      <div class="platform-grid">
-        <div class="platform-card">
-          <svg class="icon" viewBox="0 0 44 44" fill="none"><path d="M8 20L22 8L36 20" stroke="#123e80" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 18V36H32V18" stroke="#123e80" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="19" y="25" width="6" height="11" stroke="#03dffc" stroke-width="2.2"/></svg>
-          <h3>Affordable housing</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. </p>
-        </div>
-        <div class="platform-card">
-          <svg class="icon" viewBox="0 0 44 44" fill="none"><path d="M22 6L36 12V21C36 30 30 36.5 22 39C14 36.5 8 30 8 21V12L22 6Z" stroke="#123e80" stroke-width="2.2" stroke-linejoin="round"/><path d="M16 22L20.5 26.5L29 17" stroke="#03dffc" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <h3>Public safety &amp; trust</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis.</p>
-        </div>
-        <div class="platform-card">
-          <svg class="icon" viewBox="0 0 44 44" fill="none"><rect x="8" y="18" width="28" height="18" rx="2" stroke="#123e80" stroke-width="2.2"/><path d="M14 18V13C14 10.2 16.2 8 19 8H25C27.8 8 30 10.2 30 13V18" stroke="#123e80" stroke-width="2.2"/><path d="M8 25H36" stroke="#03dffc" stroke-width="2.2"/></svg>
-          <h3>Small business &amp; main streets</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
-        </div>
-        <div class="platform-card">
-          <svg class="icon" viewBox="0 0 44 44" fill="none"><path d="M22 5V15" stroke="#03dffc" stroke-width="2.2" stroke-linecap="round"/><circle cx="22" cy="24" r="12" stroke="#123e80" stroke-width="2.2"/><path d="M22 18V24L27 27" stroke="#123e80" stroke-width="2.2" stroke-linecap="round"/></svg>
-          <h3>Reliable roads &amp; snow clearing</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <div class="divider-line"></div>
 
-  <!-- ===================== ABOUT ===================== -->
-  <section class="about" id="about">
-    <div class="wrap">
-      <div class="about-portrait">
-        <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrated portrait of Linnet Rimmer">
-          <rect width="400" height="500" fill="#0a2957"/>
-          <circle cx="200" cy="190" r="90" fill="#123e80"/>
-          <circle cx="200" cy="175" r="62" fill="#eafeff"/>
-          <path d="M100 480C100 380 140 330 200 330C260 330 300 380 300 480Z" fill="#03dffc"/>
-          <path d="M100 480C100 380 140 330 200 330C260 330 300 380 300 480Z" fill="#0a2957" opacity="0.15"/>
-        </svg>
-      </div>
-      <div>
-        <span class="eyebrow">About the candidate</span>
-        <h2>Came for school, stayed because of the community.</h2>
-        <div class="about-body">
-          <p>My name is Linnet, and I'm a proud mom of six amazing children; four biological and two stepchildren. Our oldest is 12, and our youngest will turn two this December. When I was 18 years old, I moved to Sudbury to attend Laurentian University. I chose Laurentian because I had already fallen in love with this city. Its incredible natural beauty and welcoming, small-town feel, despite being a larger city, reminded me so much of where I grew up in Washago.</p>
-          <p>This fall marks 18 years since I made Sudbury my home. I've now lived half of my life here, and today I'm raising my own children in the same community that gave me so much.</p>
-          <p>If someone had told me five years ago that I would one day run for City Council, I probably would have laughed. I never would have imagined it. But today, I feel a deep sense of responsibility to step forward and do everything I can to help make Sudbury the incredible place it was when I chose to build my life here.</p>
-          <p>I'm running because I want my children, and every family, to experience this city the way I did when I first arrived: as a place full of opportunity, community, and pride. I believe in Sudbury, and I'm ready to work hard to help build a future we can all be proud of.</p>
-        </div>
-        <p class="about-signoff">— Linnet</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== GALLERY ===================== -->
-  <section class="gallery" id="gallery">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Life beyond the campaign</h2>
-        <p>Grounded by family and inspired by our community.</p>
-      </div>
-
-      <div class="gallery-grid">
-        <div class="gallery-tile">
-          <div class="gallery-placeholder">
-            <img src="images/LU.jpeg" alt="Where it began.">
-          </div>
-        </div>
-        <div class="gallery-tile">
-          <div class="gallery-placeholder">
-            <svg viewBox="0 0 24 24" fill="none">
-              <rect x="3" y="4" width="18" height="16" rx="2" stroke="#123e80" stroke-width="1.6"/>
-              <circle cx="8.5" cy="9.5" r="1.6" stroke="#123e80" stroke-width="1.6"/>
-              <path d="M3 16L8 12L12 15L16 11L21 16" stroke="#123e80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
-        <div class="gallery-tile">
-          <div class="gallery-placeholder">
-            <img src="images/SR.jpeg" alt="Sudbury Rocks!">
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===================== GET INVOLVED ===================== -->
-  <section class="involve" id="involved">
-    <div class="wrap">
-      <h2>This campaign runs on neighbours.</h2>
-      <p>Door knocks, discussions and word of mouth. Here's where you fit in.</p>
-
-      <div class="involve-grid">
-        <div class="involve-card">
-          <h3>Knock doors</h3>
-          <p>Join a canvass and talk to your neighbours about what's on the ballot this October.</p>
-          <a class="btn btn-on-navy" href="#">Sign up to canvass</a>
-        </div>
-        <div class="involve-card">
-          <h3>Put up a lawn sign</h3>
-          <p>A sign on your lawn is one of the easiest ways to help neighbours find their candidate.</p>
-          <a class="btn btn-on-navy" href="#">Request a sign</a>
-        </div>
-        <div class="involve-card">
-          <h3>Host a meet &amp; greet</h3>
-          <p>Invite Linnet to your street, your organization, or your living room to talk through the issues.</p>
-          <a class="btn btn-on-navy" href="#">Request a visit</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== MEDIA ===================== -->
-  <section class="endorse" id="media">
-    <div style ="padding-bottom: 30px;" class="wrap">
-      <blockquote><a href="http://facebook.com">"Support me for Ward 12"</a></blockquote>
-      <cite><span class="dot"></span>Linnet Rimmer, Facebook</cite>
-    </div>
-    <div style ="padding-bottom: 30px;" class="wrap">
-      <blockquote>Coming Soon.</blockquote>
-      <cite><span class="dot"></span>Sudbury Star</cite>
-    </div>
-  </section>
-
+    <p class="contact-line">Questions in the meantime? <a href="mailto:linnet.rimmer@gmail.com">linnet.rimmer@gmail.com</a></p>
+  </div>
 </main>
 
 <footer>
-  <div class="wrap">
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand">
-          <svg width="28" height="28" viewBox="0 0 24 24" role="img" aria-label="Sudbury skyline mark">
-            <rect x="1" y="20" width="22" height="1.4" fill="#03dffc"/>
-            <rect x="6.7" y="17" width="1.6" height="3.2" fill="#03dffc"/>
-            <polygon points="7.5,8.2 9.7,8.79 11.31,10.4 11.9,12.6 11.31,14.8 9.7,16.41 7.5,17 5.3,16.41 3.69,14.8 3.1,12.6 3.69,10.4 5.3,8.79" fill="none" stroke="#03dffc" stroke-width="1.3" stroke-linejoin="round"/>
-            <polygon points="7.5,11.1 8.25,11.3 8.8,11.85 9,12.6 8.8,13.35 8.25,13.9 7.5,14.1 6.75,13.9 6.2,13.35 6,12.6 6.2,11.85 6.75,11.3" fill="#03dffc"/>
-            <path d="M17.1 1.6 L18.7 1.6 L19.9 20 L15.9 20 Z" fill="#03dffc"/>
-            <rect x="16.4" y="5.4" width="3" height="1.2" fill="#123e80"/>
-            <ellipse cx="19.1" cy="0.4" rx="1.5" ry="0.9" fill="#03dffc" opacity="0.55"/>
-          </svg>
-          <span>Linnet Rimmer for Ward 12</span>
-        </div>
-        <p style="font-size:14px; max-width:32ch;">Greater Sudbury · October 26, 2026</p>
-      </div>
-      <div>
-        <h4>Campaign</h4>
-        <ul>
-          <li><a href="#platform">Platform</a></li>
-          <li><a href="#about">About Linnet</a></li>
-          <li><a href="#media">Media</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Get involved</h4>
-        <ul>
-          <li><a href="#involved">Volunteer</a></li>
-          <li><a href="#involved">Request a sign</a></li>
-          <li><a href="#involved">Host an event</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:linnet.rimmer@gmail.com">linnet.rimmer@gmail.com</a></li>
-          <li><a href="tel:+17059887706">(705) 988-7706</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Linnet Rimmer for Ward 12.</span>
-      <span>Authorized by Linnet Rimmer, Ward 12, Greater Sudbury.</span>
-    </div>
-  </div>
+  © 2026 Linnet Rimmer for Ward 12, Greater Sudbury.
 </footer>
 
 <script>
-  // Smooth-scroll fallback + focus management for anchor nav (progressive enhancement only)
-  document.querySelectorAll('a[href^="#"]').forEach(function(link){
-    link.addEventListener('click', function(e){
-      var id = this.getAttribute('href').slice(1);
-      var target = document.getElementById(id);
-      if(target){
-        e.preventDefault();
-        target.scrollIntoView({behavior: 'smooth', block: 'start'});
-        target.setAttribute('tabindex', '-1');
-        target.focus({preventScroll: true});
-      }
-    });
-  });
+  // Target: Saturday, September 5, 2026, 1:00 PM Eastern Time (EDT, UTC-4)
+  var target = new Date("2026-09-05T13:00:00-04:00").getTime();
+
+  function pad(n){ return String(n).padStart(2, '0'); }
+
+  function tick(){
+    var now = Date.now();
+    var diff = target - now;
+
+    if (diff <= 0){
+      document.getElementById('cd-days').textContent = '00';
+      document.getElementById('cd-hours').textContent = '00';
+      document.getElementById('cd-mins').textContent = '00';
+      document.getElementById('cd-secs').textContent = '00';
+      var sub = document.querySelector('.sub');
+      if (sub) sub.textContent = "We're live! Refresh the page to see the new site.";
+      clearInterval(timer);
+      return;
+    }
+
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    var secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('cd-days').textContent = pad(days);
+    document.getElementById('cd-hours').textContent = pad(hours);
+    document.getElementById('cd-mins').textContent = pad(mins);
+    document.getElementById('cd-secs').textContent = pad(secs);
+  }
+
+  tick();
+  var timer = setInterval(tick, 1000);
 </script>
 
 </body>
