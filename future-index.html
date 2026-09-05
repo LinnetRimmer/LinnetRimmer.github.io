@@ -234,13 +234,44 @@
   .section-head h2{ font-size: clamp(30px, 4vw, 42px); max-width: 16ch; }
   .section-head p{ color: var(--ink-soft); max-width: 40ch; font-size: 16px; }
 
-  .platform-grid{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-  }
+  .platform-featured{
+  border: 1px solid var(--line);
+  background: var(--white);
+  padding: 42px;
+  margin-bottom: 28px;
+}
+
+.platform-featured-header{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.platform-featured .icon{
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.platform-featured h3{
+  margin: 0;
+}
+
+.platform-featured p{
+  color: var(--ink-soft);
+  max-width: 90ch;
+  font-size: 16px;
+}
+
+.platform-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
   .platform-card{
     background: var(--white);
     padding: 36px 28px;
@@ -495,9 +526,9 @@
     <div class="wrap">
       <div>
         <h1>Deliver more, spend better</h1>
-        <p class="hero-sub">I do not believe a city should be run like a for-profit organization, but it should be responsible with the taxes it collects. The goal should be to improve services to its citizens while keeping tax increases below inflation.</p>
-        <p class="hero-sub">I believe we can improve services and experiences to make this a city you are proud to live in, without placing an extra burden on taxpayers.</p>
-        <p class="hero-sub">This site in only an introduction. If you would like to know more about my platform or positions, reach out via the <a href="#involved">links</a>.</p>
+        <p class="hero-sub">A municipality is a collective group of people pooling their resources to create a better standard of living. The goal should be to improve services to its citizens while staying as affordable as possible.</p>
+        <p class="hero-sub">I believe we can improve services and experiences to make this a city you are proud to live in, without placing an excessive burden on taxpayers. The target should be for tax increases to stay below inflation, but use our budgets wisely where they will have the most impact.</p>
+        <p class="hero-sub">This site is only an introduction. If you would like to know more about my platform or positions, reach out via the <a href="#involved">links</a>.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="#involved">Volunteer with the campaign</a>
           <a class="btn btn-outline" href="#platform">See the plan</a>
@@ -578,20 +609,28 @@
         <p>Priorities built around delivering services to citizens.</p>
       </div>
 
-      <div class="platform-grid">
-        <div class="platform-card">
+      <div class="platform-featured">
+        <div class="platform-featured-header"> 
           <svg class="icon" viewBox="0 0 44 44" fill="none"><path d="M8 20L22 8L36 20" stroke="#123e80" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 18V36H32V18" stroke="#123e80" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="19" y="25" width="6" height="11" stroke="#03dffc" stroke-width="2.2"/></svg>
-          <h3>Housing first</h3>
-          <p>Everyone deserves a safe place to call home. I am committed to reinforcing the city’s Housing First policy, ensuring individuals are placed in stable housing in a timely manner and backed by the wraparound social services they need to thrive.
-          We can look to examples like Helsinki to transition from temporary shelters to permanent housing units, and Vienna’s renowned municipal framework to expand our supply of affordable, social housing.</p>
+          <h3>Affordable Housing, Stronger Communities</h3>
         </div>
+          <p>A safe and affordable home is more than a roof over someone’s head, it is the foundation for stability, dignity, and a healthy community. When people cannot afford their housing, even a small setback can lead to housing insecurity or homelessness. 
+            For people struggling with addiction or other challenges, having a stable place to live can make it easier to access treatment, connect with support services, maintain employment, and begin rebuilding their lives. 
+            Affordable and supportive housing will not solve homelessness or addiction on its own, but it is a very important part of the solution. 
+            As a community, we should continue working toward increasing access to housing that people can actually afford, while strengthening the supports that help residents move from crisis toward stability. 
+            Everyone in Greater Sudbury deserves the opportunity to feel safe, secure, and at home in their community. I truly believe in the City's Housing First Policy and I'm committed to seeing it through.</p>
+      </div>
+
+      
+
+      <div class="platform-grid">
         
         <div class="platform-card">
           <svg class="icon" viewBox="0 0 44 44" fill="none"><rect x="7" y="12" width="30" height="20" rx="10" stroke="#123e80" stroke-width="2.2"/><circle cx="22" cy="22" r="3.2" stroke="#03dffc" stroke-width="2.2"/></svg>
           <h3>Rinks &amp; fields</h3>
           <p>I would like to continue the <a href="https://www.ctvnews.ca/northern-ontario/article/longest-serving-member-of-city-council-in-sudbury-announces-retirement/"> Ward 12 councillor tradition</a> of improving our parks.
           The outdoor rinks in the city should be repaired, maintained and open for our kids to play. Some of our baseball fields need drainage improvements or to be regraded.
-          Any improvements to free leisure and parks activities should be on the table to keep our citizens and children active and happy.</p>
+          Tennis courts, cricket fields, etc. Any improvements to free leisure and parks activities should be on the table to keep our citizens and children active and happy.</p>
         </div>
 
         <div class="platform-card">
@@ -818,7 +857,7 @@
 
 <script>
   // ===================== Hero photo rotator =====================
-  var HERO_ROTATE_MS = 2000;
+  var HERO_ROTATE_MS = 5000;
 
   (function(){
     var FOLDER = 'hero/';
@@ -878,14 +917,13 @@
         return;
       }
 
-      var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (prefersReducedMotion) return; // show first photo only, no auto-rotation
-
       var current = 0;
       setInterval(function(){
-        var next = (current + 1) % layers.length;
+      var next = (current + 1) % layers.length;
+
         layers[current].classList.remove('is-active');
         layers[next].classList.add('is-active');
+
         current = next;
       }, HERO_ROTATE_MS);
     }
