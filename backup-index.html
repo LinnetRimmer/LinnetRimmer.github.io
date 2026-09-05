@@ -187,35 +187,6 @@
 
   .hero-art{ position: relative; }
 
-  /* ---- Hero photo rotator ---- */
-  .hero-rotator{
-    position: relative;
-    width: 100%;
-    aspect-ratio: 560 / 620;
-    border-radius: 24px;
-    overflow: hidden;
-    background: var(--navy-dark);
-  }
-  .hero-rotator img{
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 0.9s ease;
-  }
-  .hero-rotator img.is-active{ opacity: 1; }
-  .hero-rotator .hero-fallback{
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-  }
-  @media (prefers-reduced-motion: reduce){
-    .hero-rotator img{ transition: none; }
-  }
-
   @media (max-width: 900px){
     .hero .wrap{ grid-template-columns: 1fr; }
     .hero-art{ order: -1; }
@@ -510,62 +481,59 @@
       </div>
 
       <div class="hero-art">
-        <div class="hero-rotator" id="heroRotator" role="img" aria-label="Photos from the campaign trail">
-          <!-- Fallback illustration - shown only if no photos are found in /hero/ -->
-          <svg class="hero-fallback" id="heroFallback" viewBox="0 0 560 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of the district skyline">
-            <rect x="0" y="0" width="560" height="620" rx="24" fill="#123e80"/>
-            <!-- soft glow -->
-            <circle cx="430" cy="120" r="150" fill="#03dffc" opacity="0.14"/>
-            <!-- skyline -->
-            <g fill="#0a2957">
-              <rect x="40" y="360" width="70" height="220"/>
-              <rect x="120" y="300" width="60" height="280"/>
-              <rect x="190" y="400" width="50" height="180"/>
-              <rect x="250" y="250" width="80" height="330"/>
-              <rect x="340" y="330" width="60" height="250"/>
-              <rect x="410" y="380" width="55" height="200"/>
-              <rect x="475" y="290" width="65" height="290"/>
-            </g>
-            <!-- windows -->
-            <g fill="#03dffc">
-              <rect x="55" y="390" width="10" height="14"/>
-              <rect x="80" y="390" width="10" height="14"/>
-              <rect x="55" y="430" width="10" height="14"/>
-              <rect x="80" y="430" width="10" height="14"/>
-              <rect x="135" y="330" width="10" height="14"/>
-              <rect x="160" y="330" width="10" height="14"/>
-              <rect x="135" y="370" width="10" height="14"/>
-              <rect x="160" y="370" width="10" height="14"/>
-              <rect x="135" y="410" width="10" height="14"/>
-              <rect x="160" y="410" width="10" height="14"/>
-              <rect x="270" y="280" width="10" height="14"/>
-              <rect x="298" y="280" width="10" height="14"/>
-              <rect x="270" y="320" width="10" height="14"/>
-              <rect x="298" y="320" width="10" height="14"/>
-              <rect x="270" y="360" width="10" height="14"/>
-              <rect x="298" y="360" width="10" height="14"/>
-              <rect x="270" y="400" width="10" height="14"/>
-              <rect x="298" y="400" width="10" height="14"/>
-              <rect x="358" y="360" width="10" height="14"/>
-              <rect x="382" y="360" width="10" height="14"/>
-              <rect x="358" y="400" width="10" height="14"/>
-              <rect x="382" y="400" width="10" height="14"/>
-              <rect x="425" y="410" width="10" height="14"/>
-              <rect x="447" y="410" width="10" height="14"/>
-              <rect x="490" y="320" width="10" height="14"/>
-              <rect x="514" y="320" width="10" height="14"/>
-              <rect x="490" y="360" width="10" height="14"/>
-              <rect x="514" y="360" width="10" height="14"/>
-            </g>
-            <!-- ground line -->
-            <rect x="0" y="580" width="560" height="40" fill="#0a2957"/>
-            <!-- badge -->
-            <g transform="translate(60,60)">
-              <circle cx="0" cy="0" r="46" fill="#ffffff"/>
-              <path d="M0 -24 L5.6 -8.6 L22 -7.4 L9.2 3.1 L13.2 19 L0 9.6 L-13.2 19 L-9.2 3.1 L-22 -7.4 L-5.6 -8.6 Z" fill="#123e80"/>
-            </g>
-          </svg>
-        </div>
+        <svg viewBox="0 0 560 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of the district skyline">
+          <rect x="0" y="0" width="560" height="620" rx="24" fill="#123e80"/>
+          <!-- soft glow -->
+          <circle cx="430" cy="120" r="150" fill="#03dffc" opacity="0.14"/>
+          <!-- skyline -->
+          <g fill="#0a2957">
+            <rect x="40" y="360" width="70" height="220"/>
+            <rect x="120" y="300" width="60" height="280"/>
+            <rect x="190" y="400" width="50" height="180"/>
+            <rect x="250" y="250" width="80" height="330"/>
+            <rect x="340" y="330" width="60" height="250"/>
+            <rect x="410" y="380" width="55" height="200"/>
+            <rect x="475" y="290" width="65" height="290"/>
+          </g>
+          <!-- windows -->
+          <g fill="#03dffc">
+            <rect x="55" y="390" width="10" height="14"/>
+            <rect x="80" y="390" width="10" height="14"/>
+            <rect x="55" y="430" width="10" height="14"/>
+            <rect x="80" y="430" width="10" height="14"/>
+            <rect x="135" y="330" width="10" height="14"/>
+            <rect x="160" y="330" width="10" height="14"/>
+            <rect x="135" y="370" width="10" height="14"/>
+            <rect x="160" y="370" width="10" height="14"/>
+            <rect x="135" y="410" width="10" height="14"/>
+            <rect x="160" y="410" width="10" height="14"/>
+            <rect x="270" y="280" width="10" height="14"/>
+            <rect x="298" y="280" width="10" height="14"/>
+            <rect x="270" y="320" width="10" height="14"/>
+            <rect x="298" y="320" width="10" height="14"/>
+            <rect x="270" y="360" width="10" height="14"/>
+            <rect x="298" y="360" width="10" height="14"/>
+            <rect x="270" y="400" width="10" height="14"/>
+            <rect x="298" y="400" width="10" height="14"/>
+            <rect x="358" y="360" width="10" height="14"/>
+            <rect x="382" y="360" width="10" height="14"/>
+            <rect x="358" y="400" width="10" height="14"/>
+            <rect x="382" y="400" width="10" height="14"/>
+            <rect x="425" y="410" width="10" height="14"/>
+            <rect x="447" y="410" width="10" height="14"/>
+            <rect x="490" y="320" width="10" height="14"/>
+            <rect x="514" y="320" width="10" height="14"/>
+            <rect x="490" y="360" width="10" height="14"/>
+            <rect x="514" y="360" width="10" height="14"/>
+          </g>
+          <!-- ground line -->
+          <rect x="0" y="580" width="560" height="40" fill="#0a2957"/>
+          <!-- badge -->
+          <g transform="translate(60,60)">
+            <circle cx="0" cy="0" r="46" fill="#ffffff"/>
+            <path d="M0 -24 L5.6 -8.6 L22 -7.4 L9.2 3.1 L13.2 19 L0 9.6 L-13.2 19 L-9.2 3.1 L-22 -7.4 L-5.6 -8.6 Z" fill="#123e80"/>
+          </g>
+        </svg>
       </div>
     </div>
   </section>
@@ -598,7 +566,8 @@
           <svg class="icon" viewBox="0 0 44 44" fill="none"><path d="M22 6L36 12V21C36 30 30 36.5 22 39C14 36.5 8 30 8 21V12L22 6Z" stroke="#123e80" stroke-width="2.2" stroke-linejoin="round"/><path d="M16 22L20.5 26.5L29 17" stroke="#03dffc" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <h3>Public trust</h3>
           <p>I am committed to being a force against misinformation by keeping you accurately informed about our city initiatives and debunking false narratives before they spread. 
-          I would like to put a focus on doing a better job of getting the messaging out to citizens about what is going on in their city.</p>
+          I would like to put a focus on doing a better job of getting the messaging out to citizens about what is going on in their city.
+          Additionally, a main goal of the campaign is to increase voter turnout, regardless of who you vote for.</p>
         </div>
 
         <div class="platform-card">
@@ -732,7 +701,7 @@
         <a class="media-item" href="https://www.nytimes.com/2023/05/23/magazine/vienna-social-housing.html?unlocked_article_code=1.-1A.AQ13.8vrYJhSSl0Xs&smid=url-share" target="_blank" rel="noopener">
           <div class="media-item-body">
             <blockquote>Imagine a Renters’ Utopia. It Might Look Like Vienna.</blockquote>
-            <cite><span class="dot"></span>Francesca Mari, New York Times (Gift Article)</cite>
+            <cite><span class="dot"></span>Francesca Mari, New York Times (Gift Article)</Article></cite>
           </div>
           <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
         </a>
@@ -814,84 +783,6 @@
       }
     });
   });
-</script>
-
-<script>
-  // ===================== Hero photo rotator =====================
-  var HERO_ROTATE_MS = 2000;
-
-  (function(){
-    var FOLDER = 'hero/';
-    var EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp', 'JPG', 'JPEG', 'PNG', 'WEBP'];
-    var MAX_PHOTOS = 60; // safety cap so a typo can't loop forever
-
-    function tryLoad(index){
-      return new Promise(function(resolve){
-        var extIdx = 0;
-        function attempt(){
-          if (extIdx >= EXTENSIONS.length){ resolve(null); return; }
-          var url = FOLDER + index + '.' + EXTENSIONS[extIdx];
-          var img = new Image();
-          img.onload = function(){ resolve(url); };
-          img.onerror = function(){ extIdx++; attempt(); };
-          img.src = url;
-        }
-        attempt();
-      });
-    }
-
-    async function findPhotos(){
-      var found = [];
-      for (var i = 1; i <= MAX_PHOTOS; i++){
-        var url = await tryLoad(i);
-        if (!url) break;
-        found.push(url);
-      }
-      return found;
-    }
-
-    async function init(){
-      var container = document.getElementById('heroRotator');
-      var fallback = document.getElementById('heroFallback');
-      if (!container) return;
-
-      var photos = await findPhotos();
-      console.log('[hero rotator] found ' + photos.length + ' photo(s):', photos);
-      if (photos.length === 0){
-        console.log('[hero rotator] No photos found in hero/ - showing the illustrated fallback. Check that hero/1.jpg (or .jpeg/.png/.webp) exists.');
-        return; // keep the illustrated fallback showing
-      }
-
-      if (fallback) fallback.remove();
-
-      var layers = photos.map(function(src, i){
-        var img = document.createElement('img');
-        img.src = src;
-        img.alt = '';
-        if (i === 0) img.classList.add('is-active');
-        container.appendChild(img);
-        return img;
-      });
-
-      if (layers.length < 2){
-        console.log('[hero rotator] Only 1 photo found, so there is nothing to rotate between. Add hero/2.jpg (sequential numbering, no gaps) to enable rotation.');
-        return;
-      }
-
-      var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (prefersReducedMotion) return; // show first photo only, no auto-rotation
-
-      var current = 0;
-      setInterval(function(){
-        var next = (current + 1) % layers.length;
-        layers[current].classList.remove('is-active');
-        layers[next].classList.add('is-active');
-        current = next;
-      }, HERO_ROTATE_MS);
-    }
-
-    init();
-  })();
 </script>
 
 </body>
