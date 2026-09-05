@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linnet Rimmer for Ward 12 — Coming Soon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --navy: #123e80;
+    --navy-dark: #0a2957;
+    --cyan: #03dffc;
+    --cyan-deep: #00b8d1;
+    --cyan-tint: #eafeff;
+    --white: #ffffff;
+    --ink: #14213a;
+    --ink-soft: #4a5b78;
+    --line: #dbe6f2;
+
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  *{ box-sizing: border-box; }
+  html, body{ height: 100%; }
+  body{
+    margin:0;
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--white);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  a{ color: inherit; text-decoration: none; }
+  h1{
+    font-family: var(--serif);
+    font-weight: 600;
+    margin: 0;
+    color: var(--navy-dark);
+    letter-spacing: -0.01em;
+  }
+
+  /* ===================== Header ===================== */
+  header{
+    padding: 24px 32px;
+  }
+  .brand{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    width: fit-content;
+  }
+  .brand-mark{
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    background: var(--navy-dark);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .brand-name{
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--navy-dark);
+    line-height: 1.25;
+  }
+  .brand-name span{ display:block; font-size: 13px; font-weight: 400; color: var(--ink-soft); font-family: var(--sans); }
+
+  /* ===================== Main ===================== */
+  main{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 24px 64px;
+  }
+  .content{
+    max-width: 720px;
+    text-align: center;
+  }
+  .eyebrow{
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--cyan-deep);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  h1.headline{
+    font-size: clamp(38px, 6vw, 62px);
+    line-height: 1.06;
+    margin-bottom: 20px;
+  }
+  .sub{
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 46ch;
+    margin: 0 auto 48px;
+  }
+
+  /* ===================== Countdown ===================== */
+  .countdown{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .countdown .unit{
+    background: var(--cyan-tint);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px 20px;
+    min-width: 96px;
+  }
+  .countdown .num{
+    font-family: var(--serif);
+    font-size: clamp(32px, 6vw, 46px);
+    font-weight: 600;
+    color: var(--navy-dark);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .countdown .label{
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .countdown .colon{
+    display: flex;
+    align-items: center;
+    font-family: var(--serif);
+    font-size: clamp(24px, 4vw, 36px);
+    color: var(--cyan-deep);
+    padding-bottom: 20px;
+  }
+  @media (max-width: 560px){
+    .countdown .colon{ display:none; }
+    .countdown{ gap: 12px; }
+    .countdown .unit{ min-width: 74px; padding: 16px 12px; }
+  }
+
+  .launch-date{
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-bottom: 40px;
+  }
+  .launch-date strong{ color: var(--navy-dark); }
+
+  .divider-line{
+    width: 60px;
+    height: 2px;
+    background: var(--cyan);
+    margin: 0 auto 40px;
+    border-radius: 2px;
+  }
+
+  .contact-line{
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+  .contact-line a{
+    color: var(--navy);
+    font-weight: 600;
+    border-bottom: 1px solid var(--cyan);
+  }
+  .contact-line a:hover{ color: var(--cyan-deep); }
+
+  /* ===================== Footer ===================== */
+  footer{
+    padding: 28px 32px;
+    text-align: center;
+    font-size: 13px;
+    color: #7d97c2;
+    background: var(--navy-dark);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="#">
+    <span class="brand-mark">
+      <svg width="22" height="22" viewBox="0 0 24 24" role="img" aria-label="Sudbury skyline mark">
+        <rect x="1" y="20" width="22" height="1.4" fill="#03dffc"/>
+        <rect x="6.7" y="17" width="1.6" height="3.2" fill="#03dffc"/>
+        <polygon points="7.5,8.2 9.7,8.79 11.31,10.4 11.9,12.6 11.31,14.8 9.7,16.41 7.5,17 5.3,16.41 3.69,14.8 3.1,12.6 3.69,10.4 5.3,8.79" fill="none" stroke="#03dffc" stroke-width="1.3" stroke-linejoin="round"/>
+        <polygon points="7.5,11.1 8.25,11.3 8.8,11.85 9,12.6 8.8,13.35 8.25,13.9 7.5,14.1 6.75,13.9 6.2,13.35 6,12.6 6.2,11.85 6.75,11.3" fill="#03dffc"/>
+        <path d="M17.1 1.6 L18.7 1.6 L19.9 20 L15.9 20 Z" fill="#03dffc"/>
+        <rect x="16.4" y="5.4" width="3" height="1.2" fill="#123e80"/>
+        <ellipse cx="19.1" cy="0.4" rx="1.5" ry="0.9" fill="#03dffc" opacity="0.55"/>
+      </svg>
+    </span>
+    <span class="brand-name">Linnet Rimmer<span>Ward 12 · Greater Sudbury</span></span>
+  </a>
+</header>
+
+<main>
+  <div class="content">
+    <div class="eyebrow">Something's on the way</div>
+    <h1 class="headline">The campaign site<br>launches soon.</h1>
+    <p class="sub">We're putting the finishing touches on the site for Linnet Rimmer's Ward&nbsp;12 campaign. Check back shortly.</p>
+
+    <div class="countdown" id="countdown">
+      <div class="unit"><div class="num" id="cd-days">00</div><div class="label">Days</div></div>
+      <div class="colon">:</div>
+      <div class="unit"><div class="num" id="cd-hours">00</div><div class="label">Hours</div></div>
+      <div class="colon">:</div>
+      <div class="unit"><div class="num" id="cd-mins">00</div><div class="label">Minutes</div></div>
+      <div class="colon">:</div>
+      <div class="unit"><div class="num" id="cd-secs">00</div><div class="label">Seconds</div></div>
+    </div>
+
+    <p class="launch-date">Live <strong>Saturday, September 5, 2026</strong> at <strong>1:00 PM ET</strong></p>
+
+    <div class="divider-line"></div>
+
+    <p class="contact-line">Questions in the meantime? <a href="mailto:linnet.rimmer@gmail.com">linnet.rimmer@gmail.com</a></p>
+  </div>
+</main>
+
+<footer>
+  © 2026 Linnet Rimmer for Ward 12, Greater Sudbury.
+</footer>
+
+<script>
+  // Target: Saturday, September 5, 2026, 1:00 PM Eastern Time (EDT, UTC-4)
+  var target = new Date("2026-09-05T13:00:00-04:00").getTime();
+
+  function pad(n){ return String(n).padStart(2, '0'); }
+
+  function tick(){
+    var now = Date.now();
+    var diff = target - now;
+
+    if (diff <= 0){
+      document.getElementById('cd-days').textContent = '00';
+      document.getElementById('cd-hours').textContent = '00';
+      document.getElementById('cd-mins').textContent = '00';
+      document.getElementById('cd-secs').textContent = '00';
+      var sub = document.querySelector('.sub');
+      if (sub) sub.textContent = "We're live! Refresh the page to see the new site.";
+      clearInterval(timer);
+      return;
+    }
+
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    var secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('cd-days').textContent = pad(days);
+    document.getElementById('cd-hours').textContent = pad(hours);
+    document.getElementById('cd-mins').textContent = pad(mins);
+    document.getElementById('cd-secs').textContent = pad(secs);
+  }
+
+  tick();
+  var timer = setInterval(tick, 1000);
+</script>
+
+</body>
+</html>
