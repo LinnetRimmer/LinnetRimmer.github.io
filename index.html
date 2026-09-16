@@ -94,6 +94,34 @@
   }
   .btn-on-navy:hover{ background: var(--white); }
 
+  /* ===================== Bullets ====================*/
+  .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan-deep);
+  flex-shrink: 0;
+  margin-top: 9px;
+  }
+
+  .bullet-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .bullet-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .bullet-item p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+
   /* ===================== Header ===================== */
   header{
     position: sticky;
@@ -281,28 +309,70 @@
   background: var(--line);
   border: 1px solid var(--line);
 }
-  .platform-card{
-    background: var(--white);
-    padding: 36px 28px;
+.platform-card{
+  background: var(--white);
+  padding: 36px 28px;
+}
+.platform-card .icon{
+  width: 44px; height: 44px;
+  margin-bottom: 24px;
+}
+.platform-card h3{
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.platform-card p{
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+@media (max-width: 900px){
+  .platform-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px){
+  .platform-grid{ grid-template-columns: 1fr; }
+}
+
+.platform-bullets {
+  background: var(--white);
+  padding: 36px 28px;
+  border: 1px solid var(--line);
+}
+
+.platform-bullets-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.platform-bullets-header .icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.platform-bullets-header h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.platform-bullet-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+@media (max-width: 900px) {
+  .platform-bullet-grid {
+    grid-template-columns: 1fr;
   }
-  .platform-card .icon{
-    width: 44px; height: 44px;
-    margin-bottom: 24px;
-  }
-  .platform-card h3{
-    font-size: 20px;
-    margin-bottom: 12px;
-  }
-  .platform-card p{
-    font-size: 15px;
-    color: var(--ink-soft);
-  }
-  @media (max-width: 900px){
-    .platform-grid{ grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 560px){
-    .platform-grid{ grid-template-columns: 1fr; }
-  }
+}
+
+.platform p + p {
+  margin-top: 14px;
+}
 
   /* ===================== About ===================== */
   .about{ background: var(--cyan-tint); }
@@ -333,7 +403,7 @@
   }
 
   /* ===================== Gallery ===================== */
-  .gallery{ background: var(--white); }
+  .gallery{ background: var(--cyan-tint); }
   .gallery-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -616,66 +686,7 @@
     </div>
   </section>
 
-  <!-- ===================== PLATFORM ===================== -->
-  <section class="platform" id="platform">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Where I stand</h2>
-        <p>Priorities built around delivering services to citizens.</p>
-      </div>
-
-      <div class="platform-featured">
-        <div class="platform-featured-header"> 
-          <svg class="icon" viewBox="0 0 44 44" fill="none"><path d="M8 20L22 8L36 20" stroke="#123e80" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 18V36H32V18" stroke="#123e80" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="19" y="25" width="6" height="11" stroke="#03dffc" stroke-width="2.2"/></svg>
-          <h3>Affordable housing, stronger communities</h3>
-        </div>
-          <p>A safe and affordable home is more than a roof over someone’s head, it is the foundation for stability, dignity, and a healthy community. When people cannot afford their housing, even a small setback can lead to housing insecurity or homelessness. 
-            For people struggling with addiction or other challenges, having a stable place to live can make it easier to access treatment, connect with support services, maintain employment, and begin rebuilding their lives. 
-            Affordable and supportive housing will not solve homelessness or addiction on its own, but it is a very important part of the solution. 
-            As a community, we should continue working toward increasing access to housing that people can actually afford, while strengthening the supports that help residents move from crisis toward stability. 
-            Everyone in Greater Sudbury deserves the opportunity to feel safe, secure, and at home in their community. I truly believe in the City's Housing First Policy and I'm committed to seeing it through.</p>
-      </div>
-      <div class="platform-featured">
-        <div class="platform-featured-header"> 
-          <svg class="icon" viewBox="0 0 44 44" fill="none"><path d="M8 20L22 8L36 20" stroke="#123e80" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 18V36H32V18" stroke="#123e80" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="19" y="25" width="6" height="11" stroke="#03dffc" stroke-width="2.2"/></svg>
-          <h3>Annual community driven efficiency reviews</h3>
-        </div>
-          <p>In 2015, the City of Greater Sudbury launched a one‑time initiative called P6M, aimed at finding $6 million in efficiencies to keep taxes flat. The program invited cost‑saving ideas from both staff and residents, and it worked. $2.1 million in savings came directly from implemented suggestions.
-             I propose making this kind of review an annual practice. We won’t uncover millions every year, but even modest savings that compound over time can make a meaningful difference. Diminishing returns shouldn’t stop us from continually improving how efficiently we use taxpayer dollars.
-          </p>
-      </div>
-
-      <div class="platform-grid"> 
-        <div class="platform-card">
-          <svg class="icon" viewBox="0 0 44 44" fill="none"><rect x="7" y="12" width="30" height="20" rx="10" stroke="#123e80" stroke-width="2.2"/><circle cx="22" cy="22" r="3.2" stroke="#03dffc" stroke-width="2.2"/></svg>
-          <h3>Rinks &amp; fields</h3>
-          <p>I would like to continue the <a href="https://www.ctvnews.ca/northern-ontario/article/longest-serving-member-of-city-council-in-sudbury-announces-retirement/"> Ward 12 councillor tradition</a> of improving our parks.
-          The outdoor rinks in the city should be repaired, maintained and open for our kids to play. Some of our baseball fields need drainage improvements or to be regraded.
-          Tennis courts, cricket fields, etc. Any improvements to free leisure and parks activities should be on the table to keep our citizens and their children active and happy.</p>
-        </div>
-
-        <div class="platform-card">
-          <svg class="icon" viewBox="0 0 44 44" fill="none"><path d="M22 6L36 12V21C36 30 30 36.5 22 39C14 36.5 8 30 8 21V12L22 6Z" stroke="#123e80" stroke-width="2.2" stroke-linejoin="round"/><path d="M16 22L20.5 26.5L29 17" stroke="#03dffc" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <h3>Public trust</h3>
-          <p>I am committed to being a force against misinformation by keeping you accurately informed about our city initiatives and debunking false narratives before they spread. 
-          I would like to more effectively use existing city resources to get the message out to citizens about what is going on in their city.
-          Additionally, whether they vote for me or someone else, I would consider my campaign successful if I was able to help improve voter turnout.</p>
-        </div>
-
-        <div class="platform-card">
-          <svg class="icon" viewBox="0 0 44 44" fill="none"><rect x="19" y="6" width="6" height="4" rx="1" stroke="#123e80" stroke-width="2.2"/><rect x="10" y="10" width="24" height="5" rx="2" stroke="#123e80" stroke-width="2.2"/><path d="M13 17L15.5 36C15.6 37.1 16.5 38 17.6 38H26.4C27.5 38 28.4 37.1 28.5 36L31 17" stroke="#123e80" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 21V33" stroke="#03dffc" stroke-width="2.2" stroke-linecap="round"/><path d="M25 21V33" stroke="#03dffc" stroke-width="2.2" stroke-linecap="round"/></svg>
-          <h3>Garbage system</h3>
-          <p>Waste reduction initiatives are important. However, to provide relief for those with confirmed rat infestations, I'm proposing two temporary measures to help.
-          First, waive tipping fees under 80lbs (two "lifts") for those addresses.
-          Secondly, I would like to introduce a system to provide additional bag tags every month to those with rodent issues to avoid a backlog of garbage for residents without a suitable vehicle to go to the landfill.
-          Additionally, the tag system could be extended to large families in the longer term. In the current system, a single individual gets the same allocation as a large family, potentially contributing to the backlog and animal issues.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===================== ABOUT ===================== -->
+   <!-- ===================== ABOUT ===================== -->
   <section class="about" id="about">
     <div class="wrap">
       <div class="about-portrait">
@@ -694,6 +705,148 @@
       </div>
     </div>
   </section>
+
+  <!-- ===================== PLATFORM ===================== -->
+  <section class="platform" id="platform">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Where I stand</h2>
+        <p>Priorities built around delivering services to citizens.</p>
+      </div>
+
+      <div class="platform-featured">
+        <div class="platform-featured-header"> 
+          <svg class="icon" viewBox="0 0 44 44" fill="none"><path d="M8 20L22 8L36 20" stroke="#123e80" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 18V36H32V18" stroke="#123e80" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="19" y="25" width="6" height="11" stroke="#03dffc" stroke-width="2.2"/></svg>
+          <h3>Affordable housing, stronger communities</h3>
+        </div>
+          <p>A safe and affordable home is more than a roof over someone’s head, it is the foundation for stability, dignity, and a healthy community. When people cannot afford their housing, even a small setback can lead to housing insecurity or homelessness. 
+            For people struggling with addiction or other challenges, having a stable place to live can make it easier to access treatment, connect with support services, maintain employment, and begin rebuilding their lives. 
+            Affordable and supportive housing will not solve homelessness or addiction on its own, but it is a very important part of the solution. </p>
+            <p>As a community, we should continue working toward increasing access to housing that people can actually afford, while strengthening the supports that help residents move from crisis toward stability. 
+            Everyone in Greater Sudbury deserves the opportunity to feel safe, secure, and at home in their community. I truly believe in the City's Housing First Policy and I'm committed to seeing it through.</p>
+      </div>
+      <div class="platform-featured">
+        <div class="platform-featured-header"> 
+          
+          <svg class="icon" viewBox="0 0 44 44" fill="none">
+            <circle cx="22" cy="22" r="16" stroke="#123e80" stroke-width="2.2"/>
+            <text x="22" y="24"
+                  text-anchor="middle"
+                  dominant-baseline="middle"
+                  font-size="22"
+                  font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+                  fill="#03dffc">
+              $
+            </text>
+          </svg>
+
+          <h3>Annual community driven efficiency reviews</h3>
+        </div>
+          <p>In 2015, the City of Greater Sudbury launched a one‑time initiative called P6M, aimed at finding $6 million in efficiencies to keep taxes flat. The program invited cost‑saving ideas from both staff and residents, and it worked. $2.1 million in savings came directly from implemented suggestions.</p>
+          <p>I propose making this kind of review an annual practice. We won’t uncover millions every year, but even modest savings that compound over time can make a meaningful difference. Diminishing returns shouldn’t stop us from continually improving how efficiently we use taxpayer dollars.</p>
+      </div>
+
+      <div class="platform-grid"> 
+        <div class="platform-card">
+          <svg class="icon" viewBox="0 0 44 44" fill="none"><rect x="7" y="12" width="30" height="20" rx="10" stroke="#123e80" stroke-width="2.2"/><circle cx="22" cy="22" r="3.2" stroke="#03dffc" stroke-width="2.2"/></svg>
+          <h3>Rinks &amp; fields</h3>
+          <p>I would like to continue the <a href="https://www.ctvnews.ca/northern-ontario/article/longest-serving-member-of-city-council-in-sudbury-announces-retirement/"> Ward 12 councillor tradition</a> of improving our parks.</p>
+          <p>The outdoor rinks in the city should be repaired, maintained and open for our kids to play. Some of our baseball fields need drainage improvements or to be regraded.</p>
+          <p>Tennis courts, cricket fields, etc. Any improvements to free leisure and parks activities should be on the table to keep our citizens and their children active and happy.</p>
+        </div>
+
+        <div class="platform-card">
+          <svg class="icon" viewBox="0 0 44 44" fill="none"><path d="M22 6L36 12V21C36 30 30 36.5 22 39C14 36.5 8 30 8 21V12L22 6Z" stroke="#123e80" stroke-width="2.2" stroke-linejoin="round"/><path d="M16 22L20.5 26.5L29 17" stroke="#03dffc" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Public trust</h3>
+          <p>I am committed to being a force against misinformation by keeping you accurately informed about our city initiatives and debunking false narratives before they spread. </p>
+          <p>I would like to more effectively use existing city resources to get the message out to citizens about what is going on in their city.</p>
+          <p>Whether they vote for me or someone else, I would consider my campaign successful if I was able to help improve voter turnout.</p>
+        </div>
+
+        <div class="platform-card">
+          <svg class="icon" viewBox="0 0 44 44" fill="none"><rect x="19" y="6" width="6" height="4" rx="1" stroke="#123e80" stroke-width="2.2"/><rect x="10" y="10" width="24" height="5" rx="2" stroke="#123e80" stroke-width="2.2"/><path d="M13 17L15.5 36C15.6 37.1 16.5 38 17.6 38H26.4C27.5 38 28.4 37.1 28.5 36L31 17" stroke="#123e80" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 21V33" stroke="#03dffc" stroke-width="2.2" stroke-linecap="round"/><path d="M25 21V33" stroke="#03dffc" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <h3>Garbage system</h3>
+          <p>Waste reduction initiatives are important. However, to provide relief for those with confirmed rat infestations, I'm proposing two temporary measures to help. </p>
+          <p>First, waive tipping fees under 80lbs (two "lifts") for those addresses.</p>
+          <p>Secondly, I would like to introduce a system to provide additional bag tags every month to those with rodent issues to avoid a backlog of garbage for residents without a suitable vehicle to go to the landfill.</p>
+          <p>Additionally, the tag system could be extended to large families in the longer term. In the current system, a single individual gets the same allocation as a large family, potentially contributing to the backlog and animal issues.</p>
+        </div>
+      </div>
+
+      <div class="platform-bullet-grid">
+
+  <div class="platform-bullets">
+    <div class="platform-bullets-header">
+      <!-- Ward 12 SVG -->
+      <svg class="icon" viewBox="0 0 44 44" fill="none">
+        <rect x="10" y="10" width="24" height="24" rx="4" stroke="#123e80" stroke-width="2.2"/>
+        <path d="M17 18V28" stroke="#03dffc" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M23 18C25 18 28 18.5 28 20.5C28 22 27 23 25.5 24.2C24 25.4 22.5 26.5 22.5 28H28" stroke="#03dffc" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h3>Ward 12 Specific</h3>
+    </div>
+
+    <div class="bullet-list">
+      <div class="bullet-item">
+        <div class="dot"></div>
+        <p>Oppose a straight through connection of Montrose to Maley drive. Support instead a meandering solution through the future planned subdivision, or alternatively, no connection at all if there is no new subdivision. 
+          Insist on a sidewalk the length of Montrose to increase safety if the meandering option is implemented.</p>
+      </div>
+      <div class="bullet-item">
+        <div class="dot"></div>
+        <p>Continued push for long-term flood mitigation efforts for the Flour Mill.</p>
+      </div>
+      <div class="bullet-item">
+        <div class="dot"></div>
+        <p>Ward 12 outdoor rinks repaired to a level that they are usable again. Actually open them in the winter.</p>
+      </div>
+      <div class="bullet-item">
+        <div class="dot"></div>
+        <p>Flour Mill silos preservation and makeover.</p>
+      </div>
+      <div class="bullet-item">
+        <div class="dot"></div>
+        <p>More to come.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="platform-bullets">
+    <div class="platform-bullets-header">
+      <!-- City Wide SVG -->
+      <svg class="icon" viewBox="0 0 44 44" fill="none">
+        <line x1="8" y1="32" x2="36" y2="32" stroke="#123e80" stroke-width="2.2"/>
+        <rect x="28" y="12" width="4" height="20" stroke="#03dffc" stroke-width="2.2"/>
+        <ellipse cx="30" cy="10" rx="3" ry="1.5" fill="#03dffc" opacity="0.55"/>
+        <circle cx="14" cy="22" r="8" stroke="#03dffc" stroke-width="2.2"/>
+        <circle cx="14" cy="22" r="3" fill="#03dffc"/>
+      </svg>
+
+      <h3>City Wide</h3>
+    </div>
+
+    <div class="bullet-list">
+      <div class="bullet-item">
+        <div class="dot"></div>
+        <p>Explore the viability of a seniors property tax relief system, similar to what the city of <a href="https://www.hamilton.ca/home-neighbourhood/property-taxes/property-tax-billing/tax-assistance-programs">Hamilton</a> has in place. Allowing seniors on a lower fixed income to make ends meet more easily.</p>
+      </div>
+      <div class="bullet-item">
+        <div class="dot"></div>
+        <p>Support initiatives that would provide incentives to developers to build more affordable housing units. An example being <a href="https://www.advantagebrantford.ca/invest-and-grow/incentives/"> Brantford</a>'s initiatives.</p>
+      </div>
+      <div class="bullet-item">
+        <div class="dot"></div>
+        <p>More to come.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+    </div>
+  </section>
+
+ 
 
   <!-- ===================== GALLERY ===================== -->
   <section class="gallery" id="gallery">
