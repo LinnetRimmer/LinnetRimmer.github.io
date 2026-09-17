@@ -468,6 +468,86 @@
     .involve-grid{ grid-template-columns: 1fr; }
   }
 
+  /* ===================== Upcoming Events ===================== */
+  .events{ background: var(--cyan-tint); }
+  .events-list{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .event-item{
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px;
+  }
+  .event-date{
+    flex-shrink: 0;
+    width: 84px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--cyan-tint);
+    border-radius: 10px;
+    padding: 12px 8px;
+  }
+  .event-date .month{
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--cyan-deep);
+  }
+  .event-date .day{
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--navy-dark);
+    line-height: 1.1;
+  }
+  .event-body{ flex: 1; }
+  .event-body h3{
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .event-meta{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+  .event-meta span{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .event-meta svg{
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    color: var(--cyan-deep);
+  }
+  .event-body p.event-desc{
+    font-size: 15px;
+    color: var(--ink-soft);
+    max-width: 62ch;
+  }
+
+  .event-body p + p {
+  margin-top: 14px;
+  }
+
+  @media (max-width: 640px){
+    .event-item{ flex-direction: column; gap: 14px; }
+    .event-date{ flex-direction: row; gap: 8px; width: auto; align-self: flex-start; padding: 8px 14px; }
+  }
+
   /* ===================== Media ===================== */
   .endorse{ background: var(--white); }
   .media-list{
@@ -588,8 +668,9 @@
       <span class="brand-name">Linnet Rimmer<span>Ward 12 · Greater Sudbury</span></span>
     </a>
     <nav class="links">
-      <a href="#platform">Platform</a>
       <a href="#about">About</a>
+      <a href="#platform">Platform</a>
+      <a href="#events">Events</a>
       <a href="#media">Media</a>
       <a href="mailto:linnet.rimmer@gmail.com?subject=Ward%2012">Ask a question</a>
     </nav>
@@ -742,7 +823,9 @@
 
           <h3>Annual community driven efficiency reviews</h3>
         </div>
-          <p>In 2015, the City of Greater Sudbury launched a one‑time initiative called P6M, aimed at finding $6 million in efficiencies to keep taxes flat. The program invited cost‑saving ideas from both staff and residents, and it worked. $2.1 million in savings came directly from implemented suggestions.</p>
+          <p>In 2015, the City of Greater Sudbury launched a one‑time initiative called P6M, aimed at finding $6 million in efficiencies to keep taxes flat. The program invited cost‑saving ideas from both staff and residents, and it worked. $2.1 million in savings came from implemented suggestions.
+            (The remainder came from staff attrition measures, which would not be part of this annual review.)
+          </p>
           <p>I propose making this kind of review an annual practice. We won’t uncover millions every year, but even modest savings that compound over time can make a meaningful difference. Diminishing returns shouldn’t stop us from continually improving how efficiently we use taxpayer dollars.</p>
       </div>
 
@@ -750,7 +833,7 @@
         <div class="platform-card">
           <svg class="icon" viewBox="0 0 44 44" fill="none"><rect x="7" y="12" width="30" height="20" rx="10" stroke="#123e80" stroke-width="2.2"/><circle cx="22" cy="22" r="3.2" stroke="#03dffc" stroke-width="2.2"/></svg>
           <h3>Rinks &amp; fields</h3>
-          <p>I would like to continue the <a href="https://www.ctvnews.ca/northern-ontario/article/longest-serving-member-of-city-council-in-sudbury-announces-retirement/"> Ward 12 councillor tradition</a> of improving our parks.</p>
+          <p>I would like to continue the <a href="https://www.ctvnews.ca/northern-ontario/article/longest-serving-member-of-city-council-in-sudbury-announces-retirement/">Ward 12 councillor tradition</a> of improving our parks.</p>
           <p>The outdoor rinks in the city should be repaired, maintained and open for our kids to play. Some of our baseball fields need drainage improvements or to be regraded.</p>
           <p>Tennis courts, cricket fields, etc. Any improvements to free leisure and parks activities should be on the table to keep our citizens and their children active and happy.</p>
         </div>
@@ -790,7 +873,7 @@
       <div class="bullet-item">
         <div class="dot"></div>
         <p>Oppose a straight through connection of Montrose to Maley drive. Support instead a meandering solution through the future planned subdivision, or alternatively, no connection at all if there is no new subdivision. 
-          Insist on a sidewalk the length of Montrose to increase safety if the meandering option is implemented.</p>
+          Insist on a sidewalk the length of Montrose to improve safety if the meandering option is implemented.</p>
       </div>
       <div class="bullet-item">
         <div class="dot"></div>
@@ -846,68 +929,82 @@
     </div>
   </section>
 
- 
-
-  <!-- ===================== GALLERY ===================== -->
-  <section class="gallery" id="gallery">
+ <!-- ===================== UPCOMING EVENTS ===================== -->
+  <section class="events" id="events">
     <div class="wrap">
       <div class="section-head">
-        <h2>Life beyond the campaign</h2>
-        <p>Grounded by family and inspired by our community.</p>
+        <h2>Events schedule</h2>
+        <p>Come say hello | Events Linnet will be attending.</p>
       </div>
 
-      <div class="gallery-grid">
+      <div class="events-list">
 
-        <div class="gallery-tile-wide">
-          <div class="gallery-placeholder">
-            <img src="images/wide.jpeg" alt="Family">
+        <div class="event-item">
+          <div class="event-date">
+            <div class="month">Sep</div>
+            <div class="day">26</div>
+          </div>
+          <div class="event-body">
+            <h3>Meet & Greet | PetSave</h3>
+            <div class="event-meta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                12:00 PM – 2:00 PM
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                PetSave ReTail, 685 Notre Dame Ave
+              </span>
+            </div>
+            <p class="event-desc">Come grab a card and discuss issues and ideas.</p>
           </div>
         </div>
 
-        <div class="gallery-tile">
-          <div class="gallery-placeholder">
-            <img src="images/LU.jpeg" alt="Coach Linnet">
+        <div class="event-item">
+          <div class="event-date">
+            <div class="month">Oct</div>
+            <div class="day">1</div>
+          </div>
+          <div class="event-body">
+            <h3>Greater Sudbury Chamber of Commerce Networking Night</h3>
+            <div class="event-meta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                4:30 PM – 5:45 PM
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                363 Car & Social Club, 363 York St
+              </span>
+            </div>
+            <p class="event-desc">This event is an opportunity for candidates to connect directly with members of the local business community, build relationships and hear firsthand about the issues and priorities that matter to businesses across our city. The event is for candidates and members of the Greater Sudbury Chamber of Commerce, Downtown BIA and Sudbury Real Estate Board.</p>
+            <p class="event-desc"><b>Please note:</b> This event actually runs until 6:30 PM, but as Linnet has another event commitment (see below) she will have to leave at 5:45 PM. </p>
           </div>
         </div>
-        <div class="gallery-tile">
-          <div class="gallery-placeholder">
-            <img src="images/BB.jpeg" alt="Where it began.">
+
+        <div class="event-item">
+          <div class="event-date">
+            <div class="month">Oct</div>
+            <div class="day">1</div>
+          </div>
+          <div class="event-body">
+            <h3>Ward 12 All-Candidates Community Meeting</h3>
+            <div class="event-meta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                6:30 PM – 8:30 PM
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                Claude Charbonneau Park, 600 Percy Ave
+              </span>
+            </div>
+            <p class="event-desc">The purpose of this community meeting is to give Ward 12 residents an opportunity to meet the candidates, hear about their platforms and priorities, and ask questions about issues affecting the Flour Mill, Ward 12 and the City of Greater Sudbury.</p>
           </div>
         </div>
-        <div class="gallery-tile">
-          <div class="gallery-placeholder">
-            <img src="images/SR.jpeg" alt="Sudbury Rocks!">
-          </div>
-        </div>
-      </div>
 
-    </div>
-  </section>
-
-  <!-- ===================== GET INVOLVED ===================== -->
-  <section class="involve" id="involved">
-    <div class="wrap">
-      <h2>This campaign runs on neighbours.</h2>
-      <p>Door knocks, discussions and ideas. Here's where you fit in.</p>
-
-      <div class="involve-grid">
-        <div class="involve-card">
-          <h3>Give your input</h3>
-          <p>No one person has all the answers. No one person has experienced every issue. Tell me yours.</p>
-          <a class="btn btn-on-navy" href="https://docs.google.com/forms/d/e/1FAIpQLSdxX4sVYgGI0MZG2GwtokOPsMsLt6Vj5ygl417FpZW-G-ZUaA/viewform?usp=header">Submit an idea</a>
-        </div>
-
-        <div class="involve-card">
-          <h3>Spread the word</h3>
-          <p>Request business cards to hand out or sign up to canvass and give them to your neighbours.</p>
-          <a class="btn btn-on-navy" href="https://docs.google.com/forms/d/e/1FAIpQLSfL32f02rBXjqu2_UwFZpbnOUMkuvPE0JayLTEZASn2eQSHPA/viewform?usp=header">Request Cards</a>
-        </div>
         
-        <div class="involve-card">
-          <h3>Request a call or meeting</h3>
-          <p>Invite Linnet to your street, your organization, or your gathering. Or request a phone call.</p>
-          <a class="btn btn-on-navy" href="https://docs.google.com/forms/d/e/1FAIpQLSe5QJo8Lop0SoBeDHaMiH66nxhKbrv740uZ1K-KdI8SvJEVhw/viewform?usp=header">Request a visit</a>
-        </div>
+
       </div>
     </div>
   </section>
@@ -965,6 +1062,78 @@
     </div>
   </section>
 
+  
+
+  <!-- ===================== GET INVOLVED ===================== -->
+  <section class="involve" id="involved">
+    <div class="wrap">
+      <h2>This campaign runs on neighbours.</h2>
+      <p>Door knocks, discussions and ideas. Here's where you fit in.</p>
+
+      <div class="involve-grid">
+        <div class="involve-card">
+          <h3>Give your input</h3>
+          <p>No one person has all the answers. No one person has experienced every issue. Tell me yours.</p>
+          <a class="btn btn-on-navy" href="https://docs.google.com/forms/d/e/1FAIpQLSdxX4sVYgGI0MZG2GwtokOPsMsLt6Vj5ygl417FpZW-G-ZUaA/viewform?usp=header">Submit an idea</a>
+        </div>
+
+        <div class="involve-card">
+          <h3>Spread the word</h3>
+          <p>Request business cards to hand out or sign up to canvass and give them to your neighbours.</p>
+          <a class="btn btn-on-navy" href="https://docs.google.com/forms/d/e/1FAIpQLSfL32f02rBXjqu2_UwFZpbnOUMkuvPE0JayLTEZASn2eQSHPA/viewform?usp=header">Request Cards</a>
+        </div>
+        
+        <div class="involve-card">
+          <h3>Request a call or meeting</h3>
+          <p>Invite Linnet to your street, your organization, or your gathering. Or request a phone call.</p>
+          <a class="btn btn-on-navy" href="https://docs.google.com/forms/d/e/1FAIpQLSe5QJo8Lop0SoBeDHaMiH66nxhKbrv740uZ1K-KdI8SvJEVhw/viewform?usp=header">Request a visit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  
+
+  <!-- ===================== GALLERY ===================== -->
+  <section class="gallery" id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Life beyond the campaign</h2>
+        <p>Grounded by family and inspired by our community.</p>
+      </div>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-tile-wide">
+          <div class="gallery-placeholder">
+            <img src="images/wide.jpeg" alt="Family">
+          </div>
+        </div>
+
+        <div class="gallery-tile">
+          <div class="gallery-placeholder">
+            <img src="images/LU.jpeg" alt="Coach Linnet">
+          </div>
+        </div>
+        <div class="gallery-tile">
+          <div class="gallery-placeholder">
+            <img src="images/BB.jpeg" alt="Where it began.">
+          </div>
+        </div>
+        <div class="gallery-tile">
+          <div class="gallery-placeholder">
+            <img src="images/SR.jpeg" alt="Sudbury Rocks!">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== END =========================== -->
+
 </main>
 
 <footer>
@@ -988,9 +1157,9 @@
       <div>
         <h4>Campaign</h4>
         <ul>
-          <li><a href="#platform">Platform</a></li>
           <li><a href="#about">About Linnet</a></li>
-          <li><a href="#media">Media</a></li>
+          <li><a href="#platform">Platform</a></li>
+          <li><a href="#events">Events</a></li>
         </ul>
       </div>
       <div>
