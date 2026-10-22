@@ -213,9 +213,8 @@
   .turnout + .hero{ padding-top: 56px; }
   .turnout-card{
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 24px 48px;
-    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 28px;
     background: var(--cyan-tint);
     border: 1px solid var(--line);
     border-radius: 18px;
@@ -230,11 +229,11 @@
     color: var(--ink-soft);
     font-size: 16px;
     margin: 0;
-    max-width: 44ch;
+    max-width: 60ch;
   }
   .turnout-stats{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
   }
   .turnout-stat{
@@ -242,6 +241,8 @@
     border: 1px solid var(--line);
     border-radius: 14px;
     padding: 20px 20px 18px;
+    display: flex;
+    flex-direction: column;
   }
   .turnout-stat strong{
     display: block;
@@ -255,9 +256,9 @@
     font-size: 13px;
     color: var(--ink-soft);
     margin: 8px 0 14px;
-    min-height: 2.9em;
   }
   .turnout-bar{
+    margin-top: auto;
     height: 6px;
     border-radius: 999px;
     background: var(--line);
@@ -276,17 +277,16 @@
   }
   .turnout-stat.is-focus .turnout-bar i{ background: var(--navy); }
   .turnout-source{
-    grid-column: 1 / -1;
     margin: 0;
     font-size: 12px;
     color: var(--ink-soft);
   }
   @media (max-width: 860px){
-    .turnout-card{ grid-template-columns: 1fr; gap: 28px; padding: 28px 24px; }
+    .turnout-card{ padding: 28px 24px; }
+    .turnout-stats{ grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 520px){
     .turnout-stats{ grid-template-columns: 1fr; }
-    .turnout-stat span{ min-height: 0; }
   }
 
   /* ===================== Hero ===================== */
@@ -834,6 +834,11 @@
             <span>Ward 12 | 2026 <br>(Updated Oct22-12PM) </span>
             <div class="turnout-bar"><i></i></div>
           </div>
+          <div class="turnout-stat" style="--pct:14%">
+            <strong>14%</strong>
+            <span>City-wide | 2026 <br><a href="https://www.greatersudbury.ca/city-hall/municipal-schoolboard-elections/" target="_blank">(Updated Oct21)</a> </span>
+            <div class="turnout-bar"><i></i></div>
+          </div>
           <div class="turnout-stat" style="--pct:36%">
             <strong>36%</strong>
             <span>Ward 12 | 2022 <br> Final turnout</span>
@@ -864,8 +869,8 @@
         </div>
         <div class="hero-stats">
           <div class="hero-stats-grid">
-            <div><strong>Sept 8</strong><span>Door Knocking Began</span></div>
-            <div><strong>Oct 16</strong><span>Online Voting Open</span></div>
+            <div><strong>Sept 8</strong><span>Door knocking begins</span></div>
+            <div><strong>Oct 16</strong><span>Online voting opens</span></div>
             <div><strong>Oct 26</strong><span>Election day</span></div>
           </div>
         </div>
