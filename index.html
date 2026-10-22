@@ -177,6 +177,37 @@
     .menu-toggle{ display:block; }
   }
 
+  .ticker{
+    display: block;
+    overflow: hidden;
+    background: var(--navy-dark);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    padding: 11px 0;
+  }
+  .ticker:focus-visible{ outline: 3px solid var(--cyan); outline-offset: -3px; }
+  .ticker-track{
+    display: flex;
+    width: max-content;
+    will-change: transform;
+  }
+  .ticker-item{
+    white-space: nowrap;
+    padding-right: 64px;
+    display: flex;
+    align-items: center;
+  }
+  .ticker-item::after{
+    content: "";
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--cyan);
+    margin-left: 64px;
+  }
+
   /* ===================== Hero ===================== */
   .hero{
     padding: 88px 0 100px;
@@ -666,6 +697,13 @@
 <body>
 
 <header>
+  <a class="ticker" href="https://greatersudbury.elections.vote" target="_blank" rel="noopener"
+     aria-label="Voting open now! Click here to vote">
+    <div class="ticker-track" id="tickerTrack">
+      <span class="ticker-item">Voting open now! Click HERE to vote</span>
+    </div>
+  </a>
+
   <div class="wrap nav-row">
     <a class="brand" href="#top">
       <span class="brand-mark">
@@ -1445,6 +1483,51 @@
 
     init();
   })();
+</script>
+
+<script>
+(function(){
+  var track = document.getElementById('tickerTrack');
+  if(!track) return;
+  var first = track.firstElementChild;
+  var items = [first];
+
+  // Repeat the message until one set is wider than the screen
+  while(track.scrollWidth < Math.max(window.innerWidth, screen.width) && items.length < 40){
+    var c = first.cloneNode(true); c.classList.add('is-clone');
+    track.appendChild(c); items.push(c);
+  }
+  // Duplicate the whole set once so the loop is seamless
+  items.forEach(function(it){
+    var c = it.cloneNode(true); c.classList.add('is-clone');
+    track.appendChild(c);
+  });
+
+  var speed = 50;          // pixels per second
+  var x = 0, last = null, paused = false;
+  var half = track.scrollWidth / 2;
+
+  function measure(){ half = track.scrollWidth / 2; }
+  window.addEventListener('load', measure);
+  window.addEventListener('resize', measure);
+
+  var ticker = track.parentElement;
+  ticker.addEventListener('mouseenter', function(){ paused = true; });
+  ticker.addEventListener('mouseleave', function(){ paused = false; });
+
+  function step(ts){
+    if(last === null) last = ts;
+    var dt = Math.min((ts - last) / 1000, 0.1);
+    last = ts;
+    if(!paused){
+      x -= speed * dt;
+      if(x <= -half) x += half;
+      track.style.transform = 'translateX(' + x + 'px)';
+    }
+    requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+})();
 </script>
 
 </body>
