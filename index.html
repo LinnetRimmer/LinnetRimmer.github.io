@@ -208,6 +208,87 @@
     margin-left: 64px;
   }
 
+  /* ===================== Voter turnout ===================== */
+  .turnout{ padding: 40px 0 0; }
+  .turnout + .hero{ padding-top: 56px; }
+  .turnout-card{
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 24px 48px;
+    align-items: center;
+    background: var(--cyan-tint);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 40px 44px;
+  }
+  .turnout-card h2{
+    font-size: clamp(24px, 3vw, 32px);
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .turnout-lead{
+    color: var(--ink-soft);
+    font-size: 16px;
+    margin: 0;
+    max-width: 44ch;
+  }
+  .turnout-stats{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .turnout-stat{
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px 20px 18px;
+  }
+  .turnout-stat strong{
+    display: block;
+    font-family: var(--serif);
+    font-size: 40px;
+    line-height: 1;
+    color: var(--navy-dark);
+  }
+  .turnout-stat span{
+    display: block;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin: 8px 0 14px;
+    min-height: 2.9em;
+  }
+  .turnout-bar{
+    height: 6px;
+    border-radius: 999px;
+    background: var(--line);
+    overflow: hidden;
+  }
+  .turnout-bar i{
+    display: block;
+    height: 100%;
+    width: var(--pct);
+    border-radius: 999px;
+    background: var(--cyan-deep);
+  }
+  .turnout-stat.is-focus{
+    border-color: var(--cyan-deep);
+    box-shadow: 0 0 0 1px var(--cyan-deep);
+  }
+  .turnout-stat.is-focus .turnout-bar i{ background: var(--navy); }
+  .turnout-source{
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+  @media (max-width: 860px){
+    .turnout-card{ grid-template-columns: 1fr; gap: 28px; padding: 28px 24px; }
+  }
+  @media (max-width: 520px){
+    .turnout-stats{ grid-template-columns: 1fr; }
+    .turnout-stat span{ min-height: 0; }
+  }
+
   /* ===================== Hero ===================== */
   .hero{
     padding: 88px 0 100px;
@@ -737,6 +818,38 @@
 
 <main id="top">
 
+
+  <!-- ===================== VOTER TURNOUT ===================== -->
+  <section class="turnout" aria-labelledby="turnoutTitle">
+    <div class="wrap">
+      <div class="turnout-card">
+        <div>
+          <div class="eyebrow">Voter turnout</div>
+          <h2 id="turnoutTitle">Ward 12 had the lowest turnout in the city in 2022</h2>
+          <p class="turnout-lead">Fewer than 4 in 10 of us voted last time. Voting is open until 8 p.m. on October 26, so let&rsquo;s change that.</p>
+        </div>
+        <div class="turnout-stats">
+          <div class="turnout-stat is-focus" style="--pct:12.43%">
+            <strong>12.43%</strong>
+            <span>Ward 12 | 2026 <br>(Updated Oct22-12PM) </span>
+            <div class="turnout-bar"><i></i></div>
+          </div>
+          <div class="turnout-stat" style="--pct:36%">
+            <strong>36%</strong>
+            <span>Ward 12 | 2022 <br> Final turnout</span>
+            <div class="turnout-bar"><i></i></div>
+          </div>
+          <div class="turnout-stat" style="--pct:42%">
+            <strong>42%</strong>
+            <span>City-wide | 2022 <br> Final turnout</span>
+            <div class="turnout-bar"><i></i></div>
+          </div>
+        </div>
+        <p class="turnout-source">Source: City of Greater Sudbury, 2022 election results.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== HERO ===================== -->
   <section class="hero">
     <div class="wrap">
@@ -745,7 +858,7 @@
         <p class="hero-sub">A municipality is a collective group of people pooling their resources to create a better standard of living. The goal should be to improve services to its citizens while staying as affordable as possible.</p>
         <p class="hero-sub">I believe we can improve services and experiences to make this a city you are proud to live in, without placing an excessive burden on taxpayers. The target should be for tax increases to stay below inflation, but use our budgets wisely where they will have the most impact.</p>
         <p class="hero-sub">This site is only an introduction. If you would like to know more about my platform or positions, reach out via the <a href="#involved">links</a>.</p>
-        <div class="hero-ctas" id="stats">
+        <div class="hero-ctas">
           <a class="btn btn-primary" href="#involved">Volunteer with the campaign</a>
           <a class="btn btn-outline" href="#platform">See the plan</a>
         </div>
